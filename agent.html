@@ -86,7 +86,7 @@
             <li>“Open the ferry” leaves this page for the bridge.</li>
             <li>“AAPL close” reads the end-of-day snapshot, with the session date.</li>
             <li>“Wax tiers” lists Visitor through House from the config, and says they are not enforced.</li>
-            <li>“What is the CA?” says coming soon, until <code>token.address</code> is set.</li>
+            <li>“What is the CA?” reads the contract address from <code>token.address</code>.</li>
           </ul>
           <p class="help">Night clerks, on the Agents page, watch the chain. This clerk talks. They do not share a memory, and neither one holds a seed.</p>
         </aside>
@@ -116,7 +116,13 @@
       <div>
         <p><a class="x-link" href="https://x.com/privyra_" target="_blank" rel="noopener noreferrer">X / privyra_</a></p>
         <p><a class="github-link" href="https://github.com/privyra" target="_blank" rel="noopener noreferrer">GitHub</a></p>
-        <p class="fine">Privyra is not a broker, a custodian, or an offer of securities. Names on the markets page are a catalogue, not listed products. $PRIVYRA is not launched. Nothing here is investment advice.</p>
+        <div class="ca" data-ca>
+          <span class="ca-kicker">$PRIVYRA</span>
+          <code data-ca-value>0x49acc14c7dcee0361da999311320f7b8d50c81b3</code>
+          <a data-ca-explorer href="https://robinhoodchain.blockscout.com/token/0x49acc14c7dcee0361da999311320f7b8d50c81b3" target="_blank" rel="noopener noreferrer">Explorer</a>
+          <button type="button" class="btn btn-ghost btn-small" data-ca-copy>Copy</button>
+        </div>
+        <p class="fine">Privyra is not a broker, a custodian, or an offer of securities. Names on the markets page are a catalogue, not listed products. Nothing here is investment advice.</p>
       </div>
     </div>
     <p class="fine fine-end">© <span data-year>2026</span> Privyra. No analytics. No custody.</p>

@@ -19,8 +19,8 @@
       symbol: "PRIVYRA",
       name: "Privyra",
       decimals: 18,
-      /* $PRIVYRA contract on Robinhood Chain. Leave "" until launch. */
-      address: "",
+      /* $PRIVYRA contract on Robinhood Chain. */
+      address: "0x49acc14c7dcee0361da999311320f7b8d50c81b3",
       chainId: 4663,
       /* Design notes. Not a minted supply. */
       intendedSupply: "100000000",
@@ -96,7 +96,7 @@
       { symbol: "ETH", name: "Ether", decimals: 18, nativeOn: "robinhood", addresses: {} },
       { symbol: "HYPE", name: "HYPE", decimals: 18, nativeOn: "elysium", addresses: {} },
       { symbol: "USDC", name: "USD Coin", decimals: 6, addresses: { robinhood: "", elysium: "" } },
-      { symbol: "PRIVYRA", name: "Privyra", decimals: 18, addresses: { robinhood: "", elysium: "" } },
+      { symbol: "PRIVYRA", name: "Privyra", decimals: 18, addresses: { robinhood: "0x49acc14c7dcee0361da999311320f7b8d50c81b3", elysium: "" } },
     ],
 
     markets: {

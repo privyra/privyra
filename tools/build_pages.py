@@ -477,7 +477,7 @@ add(
 add(
     "token.html",
     "$PRIVYRA — Privyra",
-    "The Privyra token page. The contract address is coming soon and is read from one config value. Holder tiers are house rules, not yet enforced.",
+    "The Privyra token page. Contract 0x49acc14c7dcee0361da999311320f7b8d50c81b3 on Robinhood Chain. Holder tiers are house rules, not yet enforced.",
     "https://privyra.si/token",
     BASE_SCRIPTS,
     r"""
@@ -486,19 +486,20 @@ add(
       <header class="page-hero">
         <p class="kicker">$PRIVYRA</p>
         <h1 class="display-sm">The key to the desk. Not the cargo.</h1>
-        <p class="lede">$PRIVYRA is how the house will know the weight of your wax: how many sealed actions the clerks prepare for you in a day. It is not a receipt for the Ether, HYPE, or tokenized shares you move. It has not been issued. When it is, it is intended for Robinhood Chain, chain 4663.</p>
+        <p class="lede">$PRIVYRA is how the house will know the weight of your wax: how many sealed actions the clerks prepare for you in a day. It is not a receipt for the Ether, HYPE, or tokenized shares you move. It is issued on Robinhood Chain, chain 4663.</p>
       </header>
       <div class="token-band">
         <div>
           <div class="ca" data-ca>
             <span class="ca-kicker">Contract</span>
-            <code data-ca-value>CA: coming soon</code>
-            <button type="button" class="btn btn-ghost btn-small" data-ca-copy disabled>Copy</button>
+            <code data-ca-value>0x49acc14c7dcee0361da999311320f7b8d50c81b3</code>
+            <a data-ca-explorer href="https://robinhoodchain.blockscout.com/token/0x49acc14c7dcee0361da999311320f7b8d50c81b3" target="_blank" rel="noopener noreferrer">Explorer</a>
+            <button type="button" class="btn btn-ghost btn-small" data-ca-copy>Copy</button>
           </div>
-          <p class="help">The copy button stays quiet until <code>token.address</code> in <code>js/config.js</code> is a 20-byte address. That single value also feeds the chip on the home page. Replace it once. Do not hunt through the templates.</p>
+          <p class="help">This is the $PRIVYRA contract on Robinhood Chain. Copy puts the full address on the clipboard. Explorer opens it on Blockscout.</p>
         </div>
         <dl class="spec">
-          <div><dt>Status</dt><dd>Not launched</dd></div>
+          <div><dt>Status</dt><dd>Launched</dd></div>
           <div><dt>Intended chain</dt><dd>Robinhood Chain · 4663</dd></div>
           <div><dt>Intended supply</dt><dd>100,000,000</dd></div>
           <div><dt>Decimals</dt><dd>18</dd></div>
@@ -581,10 +582,17 @@ add(
       <p>Sources: <a href="https://elysium.kinetiq.xyz/docs/connecting-to-elysium" target="_blank" rel="noopener noreferrer">Connecting to Elysium</a> (dated 9 November 2026) and the <a href="https://hub.conduit.xyz/elysium-mainnet" target="_blank" rel="noopener noreferrer">Conduit listing</a>. The same chain id was also returned by <code>https://rpc.asphodelhq.com</code>. That endpoint is left as a note, not the default. ElysScan at scan.elysp.com is a working explorer for chain 99901; wallet links use the Kinetiq host because it serves <code>/tx/</code> and <code>/address/</code>.</p>
       <h2>Contracts</h2>
       <p>Every address the desk will call. “Unset” means the config string is empty.</p>
+      <div class="ca" data-ca>
+        <span class="ca-kicker">$PRIVYRA</span>
+        <code data-ca-value>0x49acc14c7dcee0361da999311320f7b8d50c81b3</code>
+        <a data-ca-explorer href="https://robinhoodchain.blockscout.com/token/0x49acc14c7dcee0361da999311320f7b8d50c81b3" target="_blank" rel="noopener noreferrer">Explorer</a>
+        <button type="button" class="btn btn-ghost btn-small" data-ca-copy>Copy</button>
+      </div>
       <div class="table-wrap">
         <table class="data">
           <thead><tr><th scope="col">Contract</th><th scope="col">Config key</th><th scope="col">Address</th></tr></thead>
           <tbody>
+            <tr><th scope="row">$PRIVYRA</th><td>token.address</td><td><a href="https://robinhoodchain.blockscout.com/token/0x49acc14c7dcee0361da999311320f7b8d50c81b3" target="_blank" rel="noopener noreferrer">0x49acc14c7dcee0361da999311320f7b8d50c81b3</a></td></tr>
             <tr><th scope="row">Seal announcer</th><td>sealAnnouncer</td><td data-contract="sealAnnouncer" data-chain="robinhood">Unset</td></tr>
             <tr><th scope="row">Seal registry</th><td>sealRegistry</td><td data-contract="sealRegistry" data-chain="robinhood">Unset</td></tr>
             <tr><th scope="row">Swap router</th><td>swapRouter</td><td data-contract="swapRouter" data-chain="elysium">Unset</td></tr>
@@ -609,7 +617,8 @@ add(
         <li>Live, from CoinGecko: the ETH spot price in the strip, and the same figure if you ask Privyra AI for ether. It is not an on-chain oracle. If the request fails, the answer is n/a.</li>
         <li>End-of-day, from Fin-node: equity closes on the markets page and in Privyra AI, labeled with the session date. Not a live tape.</li>
         <li>In the page, with no model: Privyra AI’s explanations and navigation.</li>
-        <li>Not live: $PRIVYRA, swaps, pools, the ferry, seals, tiers, and spread alerts.</li>
+        <li>Live: the $PRIVYRA contract on Robinhood Chain, 0x49acc14c7dcee0361da999311320f7b8d50c81b3.</li>
+        <li>Not live: swaps, pools, the ferry, seals, tiers, and spread alerts.</li>
       </ul>
       <h2>A note on the catalogue</h2>
       <p>Ticker symbols are names of companies and funds. They are not a claim that a tokenized version trades on this desk. When those tokens exist, their addresses belong in the config, beside the prices, and the markets page should start saying so. Until then the page is a catalogue with a cited close or a blank.</p>
@@ -642,7 +651,7 @@ add(
             <li>“Open the ferry” leaves this page for the bridge.</li>
             <li>“AAPL close” reads the end-of-day snapshot, with the session date.</li>
             <li>“Wax tiers” lists Visitor through House from the config, and says they are not enforced.</li>
-            <li>“What is the CA?” says coming soon, until <code>token.address</code> is set.</li>
+            <li>“What is the CA?” reads the contract address from <code>token.address</code>.</li>
           </ul>
           <p class="help">Night clerks, on the Agents page, watch the chain. This clerk talks. They do not share a memory, and neither one holds a seed.</p>
         </aside>

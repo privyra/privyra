@@ -173,7 +173,7 @@
     var address = net.isAddress(cfg.token.address) ? cfg.token.address : "coming soon";
     var supply = Number(cfg.token.intendedSupply);
     var supplyText = Number.isFinite(supply) ? supply.toLocaleString("en-US") : cfg.token.intendedSupply;
-    return "$PRIVYRA is the key to the desk, not a claim on the assets you move. It is not launched, so it has no price. Contract address: " + address + ". Intended supply, as a design note only: " + supplyText + ". Intended chain: Robinhood Chain, 4663. Say “open the token page” if you want the full table.";
+    return "$PRIVYRA is the key to the desk, not a claim on the assets you move. This desk does not quote a price for it. Contract address: " + address + ". Intended supply, as a design note only: " + supplyText + ". Intended chain: Robinhood Chain, 4663. Say “open the token page” if you want the full table.";
   }
 
   function faq(lower) {

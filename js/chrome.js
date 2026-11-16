@@ -59,10 +59,24 @@
 
   function initCa() {
     var address = tokenAddress();
+    var explorerHref = address ? cfg.networks.robinhood.explorer.replace(/\/$/, "") + "/token/" + address : "";
     document.querySelectorAll("[data-ca]").forEach(function (wrap) {
       var code = wrap.querySelector("[data-ca-value]");
       var button = wrap.querySelector("[data-ca-copy]");
       if (code) code.textContent = address ? address : "CA: coming soon";
+      var explorer = wrap.querySelector("[data-ca-explorer]");
+      if (address) {
+        if (!explorer) {
+          explorer = net.h("a", { target: "_blank", rel: "noopener noreferrer", text: "Explorer" });
+          explorer.setAttribute("data-ca-explorer", "");
+          if (button) wrap.insertBefore(explorer, button);
+          else wrap.appendChild(explorer);
+        }
+        explorer.href = explorerHref;
+        explorer.hidden = false;
+      } else if (explorer) {
+        explorer.hidden = true;
+      }
       if (!button) return;
       if (!address) {
         button.disabled = true;
