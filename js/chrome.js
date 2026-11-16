@@ -3,10 +3,15 @@
   var cfg = window.PRIVYRA_CONFIG;
   var net = window.PrivyraNet;
 
+  var NAV_PAGES = { home: 1, swap: 1, pools: 1, markets: 1, bridge: 1, transfer: 1, agents: 1, token: 1, agent: 1, docs: 1 };
+
   function initNav() {
-    var page = document.body.dataset.page || "";
+    var fromPath = net.pageId(location.pathname);
+    var page = NAV_PAGES[fromPath] ? fromPath : (document.body.dataset.page || "");
     document.querySelectorAll("[data-page-link]").forEach(function (link) {
-      if (link.dataset.pageLink === page) link.setAttribute("aria-current", "page");
+      var id = link.dataset.pageLink;
+      var linkId = net.pageId(link.getAttribute("href") || "");
+      if (id === page || (linkId && linkId === page)) link.setAttribute("aria-current", "page");
       else link.removeAttribute("aria-current");
     });
     var burger = document.querySelector(".burger");

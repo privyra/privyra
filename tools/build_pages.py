@@ -33,7 +33,7 @@ add(
     "swap.html",
     "Quiet swap — Privyra",
     "Rehearse a Privyra swap. Token selectors, amounts, slippage, and a route panel. No price is invented while the router is unset.",
-    "https://privyra.si/swap.html",
+    "https://privyra.si/swap",
     BASE_SCRIPTS + '  <script src="/js/desk.js"></script>\n  <script src="/js/swap.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -121,7 +121,7 @@ add(
     "pools.html",
     "Pools — Privyra",
     "Privyra liquidity pools. A table for TVL, volume, and APR, and an add-liquidity form. Figures stay blank until a factory address is set.",
-    "https://privyra.si/pools.html",
+    "https://privyra.si/pools",
     BASE_SCRIPTS + '  <script src="/js/desk.js"></script>\n  <script src="/js/pools.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -209,7 +209,7 @@ add(
     "markets.html",
     "Markets — Privyra",
     "A catalogue of tokenized equity names on the Privyra desk, with search, sort, and sector filters. Closes are end-of-day where a public feed exists.",
-    "https://privyra.si/markets.html",
+    "https://privyra.si/markets",
     BASE_SCRIPTS + '  <script src="/js/catalogue.js"></script>\n  <script src="/js/markets.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -270,7 +270,7 @@ add(
     "bridge.html",
     "The ferry — Privyra",
     "A Robinhood Chain to Elysium bridge desk with a one-time arrival option and a public receipt checker. The ferry contracts are not deployed.",
-    "https://privyra.si/bridge.html",
+    "https://privyra.si/bridge",
     BASE_SCRIPTS + '  <script src="/js/desk.js"></script>\n  <script src="/js/bridge.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -349,7 +349,7 @@ add(
     "transfer.html",
     "Ink transfer — Privyra",
     "Privyra private transfer. Pay a one-time seal instead of a permanent address. The announcer contract is not deployed, so no seal is invented.",
-    "https://privyra.si/transfer.html",
+    "https://privyra.si/transfer",
     BASE_SCRIPTS + '  <script src="/js/desk.js"></script>\n  <script src="/js/transfer.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -413,7 +413,7 @@ add(
     "agents.html",
     "Night clerks — Privyra",
     "Privyra agents that run in the browser tab: a ledger clerk on Robinhood Chain, a tape clerk for end-of-day closes, and a spread threshold saved locally.",
-    "https://privyra.si/agents.html",
+    "https://privyra.si/agents",
     BASE_SCRIPTS + '  <script src="/js/agents.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -478,7 +478,7 @@ add(
     "token.html",
     "$PRIVYRA — Privyra",
     "The Privyra token page. The contract address is coming soon and is read from one config value. Holder tiers are house rules, not yet enforced.",
-    "https://privyra.si/token.html",
+    "https://privyra.si/token",
     BASE_SCRIPTS,
     r"""
   <main id="main" class="page">
@@ -542,7 +542,7 @@ add(
     "docs.html",
     "House rules — Privyra",
     "How Privyra works, which network numbers were verified, and every config value the owner still has to fill.",
-    "https://privyra.si/docs.html",
+    "https://privyra.si/docs",
     BASE_SCRIPTS + '  <script src="/js/docs.js"></script>\n',
     r"""
   <main id="main" class="page">
@@ -622,7 +622,7 @@ add(
     "agent.html",
     "Privyra AI — Privyra",
     "Privyra AI answers questions about the desk, reads the same end-of-day closes as Markets, and opens pages. No API key is in the site.",
-    "https://privyra.si/agent.html",
+    "https://privyra.si/agent",
     BASE_SCRIPTS,
     r"""
   <main id="main" class="page">
@@ -656,7 +656,7 @@ add(
     "404.html",
     "Page not found — Privyra",
     "That page is not on the Privyra desk.",
-    "https://privyra.si/404.html",
+    "https://privyra.si/404",
     BASE_SCRIPTS,
     r"""
   <main id="main" class="page">
@@ -667,7 +667,7 @@ add(
         <p class="lede">The address does not match a Privyra page. The desk itself is still where you left it.</p>
         <div class="actions">
           <a class="btn btn-brass" href="/">Back to the desk</a>
-          <a class="btn btn-ghost" href="/docs.html">House rules</a>
+          <a class="btn btn-ghost" href="/docs">House rules</a>
         </div>
       </header>
     </div>

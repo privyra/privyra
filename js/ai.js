@@ -7,15 +7,15 @@
 
   var PAGES = [
     { id: "home", title: "Home", href: "/", keys: ["home", "start", "front"] },
-    { id: "swap", title: "the quiet swap", href: "/swap.html", keys: ["quiet swap", "swap", "trade"] },
-    { id: "pools", title: "Pools", href: "/pools.html", keys: ["liquidity", "pools", "pool"] },
-    { id: "markets", title: "Markets", href: "/markets.html", keys: ["markets", "market", "stocks", "catalogue", "catalog"] },
-    { id: "bridge", title: "the ferry", href: "/bridge.html", keys: ["bridge", "ferry", "crossing"] },
-    { id: "transfer", title: "ink transfer", href: "/transfer.html", keys: ["private transfer", "ink transfer", "transfer", "send", "ink"] },
-    { id: "agents", title: "the night clerks", href: "/agents.html", keys: ["night clerks", "night clerk", "clerks", "clerk", "agents"] },
-    { id: "agent", title: "Privyra AI", href: "/agent.html", keys: ["privyra ai", "assistant", "chat", "ai page", "ai"] },
-    { id: "token", title: "the $PRIVYRA page", href: "/token.html", keys: ["token page", "$privyra", "privyra token", "contract address", "token"] },
-    { id: "docs", title: "the house rules", href: "/docs.html", keys: ["house rules", "docs", "documentation", "rules"] },
+    { id: "swap", title: "the quiet swap", href: "/swap", keys: ["quiet swap", "swap", "trade"] },
+    { id: "pools", title: "Pools", href: "/pools", keys: ["liquidity", "pools", "pool"] },
+    { id: "markets", title: "Markets", href: "/markets", keys: ["markets", "market", "stocks", "catalogue", "catalog"] },
+    { id: "bridge", title: "the ferry", href: "/bridge", keys: ["bridge", "ferry", "crossing"] },
+    { id: "transfer", title: "ink transfer", href: "/transfer", keys: ["private transfer", "ink transfer", "transfer", "send", "ink"] },
+    { id: "agents", title: "the night clerks", href: "/agents", keys: ["night clerks", "night clerk", "clerks", "clerk", "agents"] },
+    { id: "agent", title: "Privyra AI", href: "/agent", keys: ["privyra ai", "assistant", "chat", "ai page", "ai"] },
+    { id: "token", title: "the $PRIVYRA page", href: "/token", keys: ["token page", "$privyra", "privyra token", "contract address", "token"] },
+    { id: "docs", title: "the house rules", href: "/docs", keys: ["house rules", "docs", "documentation", "rules"] },
   ];
 
   var SUGGESTIONS = ["How do I swap?", "Open the ferry", "AAPL close", "Wax tiers"];
@@ -92,6 +92,19 @@
       });
     });
     return best;
+  }
+
+  function canonicalHref(href) {
+    var id = net.pageId(href);
+    if (!id) return "";
+    var match = null;
+    PAGES.forEach(function (page) {
+      if (page.id === id) match = page;
+    });
+    if (!match) return "";
+    var raw = String(href);
+    var cut = raw.search(/[?#]/);
+    return match.href + (cut === -1 ? "" : raw.slice(cut));
   }
 
   function navigation(lower) {
@@ -203,7 +216,7 @@
     var lower = text.toLowerCase().replace(/\s+/g, " ").trim();
     var page = navigation(lower);
     if (page) {
-      var here = (document.body.dataset.page || "") === page.id || (page.id === "home" && (location.pathname === "/" || location.pathname.endsWith("/index.html")));
+      var here = (document.body.dataset.page || "") === page.id || net.pageId(location.pathname) === page.id;
       if (here) return { reply: "You are already on " + page.title + ".", handled: true };
       return { reply: "Opening " + page.title + ".", href: page.href, handled: true };
     }
@@ -280,8 +293,8 @@
       if (!reply.trim()) throw new Error("empty");
       var out = { reply: reply.trim(), source: "endpoint" };
       if (body && typeof body.href === "string") {
-        var known = PAGES.some(function (page) { return page.href === body.href; });
-        if (known) out.href = body.href;
+        var next = canonicalHref(body.href);
+        if (next) out.href = next;
       }
       return out;
     } catch (err) {

@@ -133,6 +133,34 @@
     return found;
   }
 
+  /* /pools, /pools.html, ./pools.html, and pools.html are the same page. Query and hash stay put. */
+  function pagePath(value) {
+    var path = String(value == null ? "" : value).trim();
+    var cut = path.search(/[?#]/);
+    if (cut !== -1) path = path.slice(0, cut);
+    if (!path || /^[a-z][a-z0-9+.-]*:/i.test(path) || path.slice(0, 2) === "//") return "";
+    if (path.slice(0, 2) === "./") path = path.slice(1);
+    if (path.charAt(0) !== "/") path = "/" + path;
+    path = path.replace(/\/+$/, "") || "/";
+    path = path.replace(/\.html$/i, "") || "/";
+    if (path === "/index") return "/";
+    return path;
+  }
+
+  function pageId(value) {
+    var path = pagePath(value);
+    if (!path) return "";
+    return path === "/" ? "home" : path.slice(1);
+  }
+
+  function cleanHref(value) {
+    var raw = String(value == null ? "" : value).trim();
+    var path = pagePath(raw);
+    if (!path) return "";
+    var cut = raw.search(/[?#]/);
+    return path + (cut === -1 ? "" : raw.slice(cut));
+  }
+
   window.PrivyraNet = {
     isAddress: isAddress,
     isHash: isHash,
@@ -146,5 +174,8 @@
     copyText: copyText,
     networkByKey: networkByKey,
     networkByChainId: networkByChainId,
+    pagePath: pagePath,
+    pageId: pageId,
+    cleanHref: cleanHref,
   };
 })();
