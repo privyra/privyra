@@ -1,0 +1,207 @@
+{
+  "source": "Fin-node",
+  "sourceUrl": "https://www.fin-node.net/api/{TICKER}.json",
+  "docs": "https://www.fin-node.net/api",
+  "attribution": "Fin-node (fin-node.net)",
+  "kind": "end-of-day",
+  "notLive": true,
+  "disclaimer": "Daily end-of-day closes compiled from Fin-node public bundles. Not a live tape and not investment advice.",
+  "fetchedAt": "2026-11-16T03:18:19Z",
+  "omitted": [
+    {
+      "symbol": "WBD",
+      "reason": "The Fin-node bundle had a single stale row dated 2026-10-05 with volume 40, so Warner Bros. Discovery is listed without a close."
+    }
+  ],
+  "quotes": {
+    "NVDA": {
+      "date": "2026-11-13",
+      "close": 162.85,
+      "prevClose": 166.19,
+      "volume": 363819700,
+      "updated": "2026-11-15T03:30:03Z"
+    },
+    "AMZN": {
+      "date": "2026-11-13",
+      "close": 266.66,
+      "prevClose": 267.44,
+      "volume": 31076200,
+      "updated": "2026-11-15T03:30:06Z"
+    },
+    "GOOGL": {
+      "date": "2026-11-13",
+      "close": 295.77,
+      "prevClose": 298.7,
+      "volume": 30712800,
+      "updated": "2026-11-15T03:30:09Z"
+    },
+    "AAPL": {
+      "date": "2026-11-13",
+      "close": 356.27,
+      "prevClose": 354.88,
+      "volume": 39985300,
+      "updated": "2026-11-15T03:30:15Z"
+    },
+    "MSFT": {
+      "date": "2026-11-13",
+      "close": 523.88,
+      "prevClose": 523,
+      "volume": 26155900,
+      "updated": "2026-11-15T03:30:18Z"
+    },
+    "TSLA": {
+      "date": "2026-11-13",
+      "close": 390.22,
+      "prevClose": 397.45,
+      "volume": 32268400,
+      "updated": "2026-11-15T03:30:21Z"
+    },
+    "META": {
+      "date": "2026-11-13",
+      "close": 641.69,
+      "prevClose": 623.61,
+      "volume": 15127500,
+      "updated": "2026-11-15T03:30:23Z"
+    },
+    "JPM": {
+      "date": "2026-11-13",
+      "close": 346.19,
+      "prevClose": 342.82,
+      "volume": 4198800,
+      "updated": "2026-11-15T03:30:29Z"
+    },
+    "MU": {
+      "date": "2026-11-13",
+      "close": 778.31,
+      "prevClose": 798.44,
+      "volume": 27792200,
+      "updated": "2026-11-15T03:30:32Z"
+    },
+    "AMD": {
+      "date": "2026-11-13",
+      "close": 534.06,
+      "prevClose": 585.3,
+      "volume": 49163200,
+      "updated": "2026-11-15T03:30:35Z"
+    },
+    "GS": {
+      "date": "2026-11-13",
+      "close": 916.56,
+      "prevClose": 913.6,
+      "volume": 1265700,
+      "updated": "2026-11-15T03:30:38Z"
+    },
+    "TSM": {
+      "date": "2026-11-13",
+      "close": 398.73,
+      "prevClose": 405.49,
+      "volume": 10712000,
+      "updated": "2026-11-15T03:30:41Z"
+    },
+    "AVGO": {
+      "date": "2026-11-13",
+      "close": 347.01,
+      "prevClose": 364.36,
+      "volume": 31602000,
+      "updated": "2026-11-15T03:30:44Z"
+    },
+    "INTC": {
+      "date": "2026-11-13",
+      "close": 59.66,
+      "prevClose": 61.2,
+      "volume": 102322800,
+      "updated": "2026-11-15T03:30:46Z"
+    },
+    "PLTR": {
+      "date": "2026-11-13",
+      "close": 167.99,
+      "prevClose": 171.58,
+      "volume": 15169600,
+      "updated": "2026-11-15T03:30:52Z"
+    },
+    "NFLX": {
+      "date": "2026-11-13",
+      "close": 62.15,
+      "prevClose": 62.69,
+      "volume": 36595300,
+      "updated": "2026-11-15T03:30:55Z"
+    },
+    "CVX": {
+      "date": "2026-11-13",
+      "close": 219.89,
+      "prevClose": 216.35,
+      "volume": 7575400,
+      "updated": "2026-11-15T03:30:58Z"
+    },
+    "ORCL": {
+      "date": "2026-11-13",
+      "close": 125.35,
+      "prevClose": 127.11,
+      "volume": 22547400,
+      "updated": "2026-11-15T03:31:01Z"
+    },
+    "BAC": {
+      "date": "2026-11-13",
+      "close": 51.02,
+      "prevClose": 50.51,
+      "volume": 19994700,
+      "updated": "2026-11-15T03:31:04Z"
+    },
+    "WMT": {
+      "date": "2026-11-13",
+      "close": 128.09,
+      "prevClose": 126.19,
+      "volume": 16619500,
+      "updated": "2026-11-15T03:31:07Z"
+    },
+    "SONY": {
+      "date": "2026-11-13",
+      "close": 27.07,
+      "prevClose": 26.66,
+      "volume": 4248400,
+      "updated": "2026-11-15T03:31:10Z"
+    },
+    "DIS": {
+      "date": "2026-11-13",
+      "close": 118.97,
+      "prevClose": 118.23,
+      "volume": 7717000,
+      "updated": "2026-11-15T03:31:13Z"
+    },
+    "BLK": {
+      "date": "2026-11-13",
+      "close": 1222.91,
+      "prevClose": 1216.61,
+      "volume": 415900,
+      "updated": "2026-11-15T03:31:15Z"
+    },
+    "CRM": {
+      "date": "2026-11-13",
+      "close": 217.84,
+      "prevClose": 217.57,
+      "volume": 5047500,
+      "updated": "2026-11-15T03:31:18Z"
+    },
+    "MRVL": {
+      "date": "2026-11-13",
+      "close": 156.76,
+      "prevClose": 164.45,
+      "volume": 23688400,
+      "updated": "2026-11-15T03:31:21Z"
+    },
+    "COIN": {
+      "date": "2026-11-13",
+      "close": 127.65,
+      "prevClose": 130.67,
+      "volume": 7910100,
+      "updated": "2026-11-15T03:31:27Z"
+    },
+    "BABA": {
+      "date": "2026-11-13",
+      "close": 94.38,
+      "prevClose": 94.36,
+      "volume": 11685800,
+      "updated": "2026-11-15T03:31:24Z"
+    }
+  }
+}
